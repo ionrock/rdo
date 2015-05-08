@@ -8,7 +8,6 @@ class BaseDriver(object):
 
     def do(self, cmd):
         cmd = self.command(cmd)
-        print(cmd)
         call(cmd)
 
     def command(self):
