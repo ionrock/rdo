@@ -11,7 +11,6 @@ on "remote" machines. Specifically is meant to help you run and
 develop code on a virtual machine, while avoiding having to shell into
 the VM.
 
-=====
 Usage
 =====
 
@@ -48,6 +47,6 @@ Vagrant VM. For example, the above would end up running:
 * Documentation: https://rdo.readthedocs.org.
 
 Features
---------
+========
 
 * TODO implement a generic ssh driver.
