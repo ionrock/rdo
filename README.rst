@@ -11,13 +11,14 @@ on "remote" machines. Specifically is meant to help you run and
 develop code on a virtual machine, while avoiding having to shell into
 the VM.
 
+
 Usage
 =====
 
 The first step is to create a `.rdo.conf` file. Here is an example
 using `rdo` with `Vagrant <https://www.vagrantup.com/>`_.
 
-.. code-block:: config
+.. code-block::
 
    [default]
    driver = vagrant
