@@ -2,4 +2,4 @@
 
 __author__ = 'Eric Larson'
 __email__ = 'eric@ionrock.org'
-__version__ = '0.1.3'
+__version__ = '0.1.4'
