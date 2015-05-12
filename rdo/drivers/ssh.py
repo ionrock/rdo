@@ -6,6 +6,9 @@ from rdo.drivers.base import BaseDriver
 
 class SSHDriver(BaseDriver):
 
+    def ssh(self):
+        yield self.config.get('ssh', 'ssh')
+
     def credentials(self):
         if 'ident' in self.config:
             ident = os.path.abspath(self.config['ident'])
@@ -26,16 +29,15 @@ class SSHDriver(BaseDriver):
                 yield flag
 
     def command(self, cmd):
-        ssh_command = ['ssh']
-
-        flags = itertools.chain(
-            self.extra_flags(),
-            self.credentials(),
-            self.user_host()
-        )
-
-        for flag in flags:
-            ssh_command.append(flag)
+        ssh_command = [
+            part for part in
+            itertools.chain(
+                self.ssh(),
+                self.extra_flags(),
+                self.credentials(),
+                self.user_host()
+            )
+        ]
 
         ssh_command.append(self.working_dir(cmd))
         return ssh_command
