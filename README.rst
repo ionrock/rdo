@@ -43,11 +43,5 @@ Vagrant VM. For example, the above would end up running:
    $ vagrant ssh -c "cd /vagrant && make build"
 
 
-
 * Free software: BSD license
 * Documentation: https://rdo.readthedocs.org.
-
-Features
-========
-
-* TODO implement a generic ssh driver.

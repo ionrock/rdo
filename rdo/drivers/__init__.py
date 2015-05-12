@@ -1,7 +1,8 @@
 from rdo.drivers import vagrant
+from rdo.drivers import ssh
 
 drivers = {
-    'ssh': None,
+    'ssh': ssh.SSHDriver,
     'vagrant': vagrant.VagrantDriver
 }
 
