@@ -65,7 +65,6 @@ Contents:
    drivers
    contributing
    authors
-   history
 
 Indices and tables
 ==================
