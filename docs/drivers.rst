@@ -50,6 +50,7 @@ A Note About Escaping
 =====================
 
 Currently drivers don't do anything terribly special about escaping
-the command. At the moment, I'm assuing "You're Not Gonna Need It",
-but if I'm wrong, please open an `issue
+the command. At the moment, I'm assuing `YAGNI
+<https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it>`_, but if
+I'm wrong, please open an `issue
 <https://github.com/ionrock/rdo/issues/>`_.
