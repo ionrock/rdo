@@ -46,6 +46,30 @@ Running `rdo ls -la` then would result in the following command:
    $ putty -i /home/eric/.ssh/mycloud.pem -p 2222 eric@example.com "cd /opt/myapp && ls -la"
 
 
+The Docker Driver
+=================
+
+The `Docker <https://docker.io>`_ driver tries to use a docker
+container to run a command. The config can specify whether to use an
+or running container.
+
+.. code-block:: config
+
+   [default]
+   driver = docker
+   name = ubuntu
+
+Running a `rdo ls -la` then results in the following command:
+
+.. code-block:: bash
+
+   $ docker run -it ubuntu ls -la
+
+You can use `exec = true` in the `.rdo.conf` in order to use `exec`
+rather than `run`, the only caveat is that you need to be sure the
+name is a running container.
+
+
 A Note About Escaping
 =====================
 
