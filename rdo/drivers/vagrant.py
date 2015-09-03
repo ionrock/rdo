@@ -9,4 +9,5 @@ class VagrantDriver(BaseDriver):
         working_dir = self.config.get('directory')
         if working_dir:
             cmd = 'cd %s && %s' % (working_dir, cmd)
+
         return prefix + [cmd]
