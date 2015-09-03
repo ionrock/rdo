@@ -10,14 +10,28 @@ DEFAULTS = {
 }
 
 
+def find_config(fname='.rdo.conf', start=None):
+    """Go up until you find an rdo config.
+    """
+    start = start or os.getcwd()
+    config_file = os.path.join(start, fname)
+    if os.path.isfile(config_file):
+        return config_file
+
+    parent, _ = os.path.split(start)
+    if parent == start:
+        raise Exception('Config file not found')
+
+    return find_config(fname, parent)
+
+
 def get_config(config_file='.rdo.conf'):
+    fname = find_config(config_file)
     config = ConfigParser()
-    config.read(config_file)
+    config.read(fname)
     env = os.environ.get('RDO_ENV') or 'default'
-    try:
-        return dict(config.items(env))
-    except ConfigParser.NoSectionError:
-        return DEFAULTS
+
+    return dict(config.items(env))
 
 
 if __name__ == '__main__':
