@@ -2,7 +2,7 @@
 rdo
 ===
 
-.. image:: https://pypip.in/d/rdo/badge.png
+.. image:: https://badge.fury.io/py/rdo.svg
         :target: https://pypi.python.org/pypi/rdo
 
 
