@@ -14,7 +14,7 @@ requirements = []
 
 setup(
     name='rdo',
-    version='0.2.1',
+    version='0.2.2',
     description='RemoteDO command',
     long_description=readme,
     author='Eric Larson',
