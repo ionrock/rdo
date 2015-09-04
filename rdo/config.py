@@ -6,7 +6,8 @@ from ConfigParser import ConfigParser
 # Use vagrant by default
 DEFAULTS = {
     'driver': 'vagrant',
-    'directory': '/vagrant'
+    'directory': '/vagrant',
+    'use_sudo': False,
 }
 
 
