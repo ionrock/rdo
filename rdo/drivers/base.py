@@ -17,15 +17,14 @@ class BaseDriver(object):
     def use_sudo(self, cmd):
         use_sudo = truthy(self.config.get('use_sudo'))
         if use_sudo:
-            return ['sudo'] + [cmd]
+            return ['sudo'] + cmd
         return cmd
 
     def working_dir(self, cmd):
-        command = ' '.join(cmd)
         working_dir = self.config.get('directory')
         if working_dir:
-            command = 'cd %s && %s' % (working_dir, command)
-        return command
+            cmd = ['cd', working_dir, '&&'] + cmd
+        return cmd
 
     def do(self, cmd):
         cmd = self.command(cmd)
